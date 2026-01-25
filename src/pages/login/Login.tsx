@@ -7,11 +7,9 @@ import { ClipLoader } from "react-spinners";
 function Login() {
 
 const navigate = useNavigate();
-
 const { usuario, handleLogin, isLoading } = useContext(AuthContext)
-
 const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
-{} as UsuarioLogin
+  {} as UsuarioLogin
 )
 
 useEffect(() => {
