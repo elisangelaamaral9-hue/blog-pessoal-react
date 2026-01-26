@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'https://blog-pessoal-melu.onrender.com'
+    baseURL: import.meta.env.VITE_API_URL
 })
 
 export const cadastrarUsuario = async (url: string, dados: Object, setDados: Function) => {
@@ -10,7 +10,6 @@ export const cadastrarUsuario = async (url: string, dados: Object, setDados: Fun
         setDados(resposta.data)
     } catch (error) {
         console.error('Erro ao cadastrar:', error)
-        // Mock para teste local
         const usuarioComId = { ...dados, id: Date.now() }
         setDados(usuarioComId)
     }
